@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    @apply bg-linen text-espresso dark:bg-espresso dark:text-linen antialiased selection:bg-coral selection:text-white transition-colors duration-200;
+  }
+
+  /* Accessible focus ring using Slate Blue (#315B8C) in light mode and lightened Slate Blue (#5B88BD) in dark mode */
+  :focus-visible {
+    @apply outline-none ring-2 ring-slate dark:ring-slate-light ring-offset-2 ring-offset-linen dark:ring-offset-espresso;
+  }
+}
+
+/* Custom subtle scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(65, 51, 51, 0.25);
+  border-radius: 9999px;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: rgba(245, 235, 221, 0.25);
+}

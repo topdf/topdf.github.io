@@ -1,0 +1,38 @@
+{
+  "id": "/",
+  "name": "ToPDF | Free Offline JPG to PDF Converter",
+  "short_name": "ToPDF",
+  "description": "Convert JPG, PNG, and WebP images into a single PDF document 100% offline inside your browser.",
+  "theme_color": "#F2765E",
+  "background_color": "#F5EBDD",
+  "display": "standalone",
+  "orientation": "any",
+  "start_url": "/",
+  "scope": "/",
+  "icons": [
+    {
+      "src": "/pwa-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/pwa-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/pwa-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/pwa-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

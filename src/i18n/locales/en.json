@@ -1,0 +1,137 @@
+{
+  "meta": {
+    "title": "ToPDF | Free Offline JPG to PDF Converter (100% Client-Side)",
+    "description": "Convert one or multiple JPG, PNG, and WebP images into a single PDF document instantly inside your browser. 100% client-side, offline-ready PWA, zero server uploads.",
+    "ogTitle": "ToPDF | Free Offline JPG to PDF Converter (100% Client-Side)",
+    "ogDescription": "Ultra-minimal, 100% client-side JPG, PNG, and WebP to PDF converter. Zero server uploads, customizable page size, orientation, and margins.",
+    "appName": "ToPDF - Offline JPG to PDF Converter"
+  },
+  "navbar": {
+    "brandName": "ToPDF",
+    "brandAria": "ToPDF Home - Offline JPG to PDF Converter",
+    "languageLabel": "Language",
+    "languageAria": "Select language",
+    "themeToggleLight": "Light",
+    "themeToggleDark": "Dark",
+    "themeToggleAria": "Toggle Light and Dark theme",
+    "installPwa": "Add to Home Screen",
+    "installPwaAria": "Install ToPDF web app to your device home screen",
+    "installPwaHintTitle": "Install ToPDF Offline App",
+    "installPwaHintBody": "To install ToPDF for offline use: open your browser menu and select 'Add to Home Screen' or 'Install App'.",
+    "installPwaClose": "Got it",
+    "supportDev": "Support Developer",
+    "supportDevAria": "Support the developer on Ko-fi"
+  },
+  "breadcrumbs": {
+    "ariaLabel": "Breadcrumb",
+    "home": "Home",
+    "current": "JPG to PDF Converter"
+  },
+  "hero": {
+    "h1": "Convert JPG to PDF Offline in Seconds",
+    "subtitle": "100% client-side in your browser. Your photos never leave your device—zero server uploads, instant conversion, works offline."
+  },
+  "dropzone": {
+    "selectBtn": "Select JPG images",
+    "orDrop": "or drop JPG, PNG, and WebP images here",
+    "inputAria": "Upload JPG, PNG, or WebP images to convert to PDF",
+    "privacyBadge": "100% Private & Client-Side",
+    "formatsBadge": "Supports JPG, PNG, WebP",
+    "offlineBadge": "Works Offline (PWA)"
+  },
+  "workspace": {
+    "imagesCount": "Selected images",
+    "clearAll": "Clear all",
+    "clearAllAria": "Remove all uploaded images",
+    "addMore": "Add more images",
+    "addMoreAria": "Add more images to the PDF queue",
+    "moveLeftAria": "Move image earlier in order",
+    "moveRightAria": "Move image later in order",
+    "rotateAria": "Rotate image 90 degrees clockwise",
+    "removeAria": "Remove image from list",
+    "pageBadge": "Page",
+    "dragHint": "Drag cards or use arrows to reorder pages"
+  },
+  "sidebar": {
+    "title": "Image to PDF options",
+    "ariaLabel": "Image to PDF conversion options",
+    "orientationLabel": "Page orientation",
+    "portrait": "Portrait",
+    "landscape": "Landscape",
+    "pageSizeLabel": "Page size",
+    "pageSizeAria": "Select PDF page size",
+    "sizeA4": "A4 (297x210 mm)",
+    "sizeLetter": "US Letter (215.9x279.4 mm)",
+    "sizeFit": "Fit to Image (Same page size as image)",
+    "marginLabel": "Margin",
+    "marginNone": "No margin",
+    "marginSmall": "Small",
+    "marginBig": "Big",
+    "mergeLabel": "Merge all images in one PDF file",
+    "convertBtn": "Convert to PDF",
+    "convertingBtn": "Generating PDF...",
+    "statusReady": "Ready to convert images to PDF.",
+    "statusConverting": "Converting your images to PDF in browser memory...",
+    "statusComplete": "PDF generated and download started successfully."
+  },
+  "seo": {
+    "howToTitle": "How to Convert JPG to PDF Offline",
+    "howToSubtitle": "Transform your images into crisp, print-ready PDF documents in three effortless steps without uploading files to any external server.",
+    "steps": [
+      {
+        "title": "1. Select or Drop Your Images",
+        "text": "Click the 'Select JPG images' button or drag and drop one or multiple JPG, PNG, or WebP files directly into the dropzone."
+      },
+      {
+        "title": "2. Arrange, Rotate & Customize Layout",
+        "text": "Reorder pages via drag-and-drop or arrow buttons, rotate individual photos in 90° steps, and choose your preferred orientation (Portrait/Landscape), page size (A4, US Letter, or Fit to Image), and margins."
+      },
+      {
+        "title": "3. Instant Client-Side PDF Download",
+        "text": "Click 'Convert to PDF' to compile your document locally using HTML5 Canvas and jsPDF. Your PDF downloads immediately with zero waiting on cloud queues."
+      }
+    ],
+    "privacyTitle": "Why 100% Client-Side PDF Conversion Protects Your Privacy",
+    "privacyLead": "Traditional online PDF converters require you to upload sensitive personal documents, ID scans, receipts, or contracts to remote third-party servers. ToPDF eliminates that risk entirely.",
+    "privacyCards": [
+      {
+        "title": "Zero Server Uploads",
+        "text": "Every image you select stays strictly inside your device's local RAM. No network requests are ever made with your files."
+      },
+      {
+        "title": "HTML5 Canvas & jsPDF Engine",
+        "text": "Image rotation, scaling, margin alignment, and PDF binary assembly execute natively in your browser thread at hardware-accelerated speeds."
+      },
+      {
+        "title": "Installable Offline PWA",
+        "text": "Click 'Add to Home Screen' in the navigation bar to install ToPDF as a standalone Progressive Web App that works on airplanes or without Wi-Fi."
+      }
+    ],
+    "faqTitle": "Frequently Asked Questions (FAQ)",
+    "faqs": [
+      {
+        "question": "Are my JPG and PNG images uploaded to any server?",
+        "answer": "No. ToPDF is 100% client-side. All image processing and PDF creation happen directly inside your web browser using JavaScript, HTML5 Canvas, and jsPDF. Your files never leave your computer or phone."
+      },
+      {
+        "question": "Can I convert JPG to PDF without an internet connection?",
+        "answer": "Yes! Once you load ToPDF or install it via the 'Add to Home Screen' button, our Progressive Web App (PWA) Service Worker caches the entire application so you can convert images to PDF completely offline."
+      },
+      {
+        "question": "Which image formats are supported besides JPG?",
+        "answer": "In addition to standard JPG and JPEG photos, ToPDF natively supports PNG (automatically compositing transparent backgrounds onto clean white PDF pages) and WebP images."
+      },
+      {
+        "question": "Is there a file size limit or watermark on converted PDFs?",
+        "answer": "There are no artificial file counts, paywalls, daily limits, or watermarks. Because your own device processes the files, you can merge dozens of high-resolution photos into a single clean PDF for free."
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "100% Client-Side Offline Image to PDF Converter. Built for speed and absolute privacy.",
+    "languagesHeading": "Available Languages",
+    "supportText": "Enjoying ToPDF? Support independent open web tools:",
+    "supportCta": "Buy me a coffee on Ko-fi",
+    "copyright": "All rights reserved. Zero data collection of uploaded files."
+  }
+}

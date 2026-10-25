@@ -1,0 +1,129 @@
+---
+import { getDictionary, type LangCode } from '@/i18n/config';
+
+interface Props {
+  lang: LangCode;
+}
+
+const { lang } = Astro.props;
+const dict = getDictionary(lang);
+---
+
+<div class="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16 space-y-16">
+  <!-- 1. How to Convert JPG to PDF Offline -->
+  <section aria-labelledby="howto-heading" class="rounded-3xl border border-espresso/15 dark:border-linen/15 bg-linen-light dark:bg-espresso-card p-6 sm:p-10 shadow-card">
+    <div class="max-w-3xl">
+      <h2 id="howto-heading" class="text-xl sm:text-3xl font-extrabold tracking-tight text-espresso dark:text-linen">
+        {dict.seo.howToTitle}
+      </h2>
+      <p class="mt-2.5 text-sm sm:text-base text-espresso/80 dark:text-linen/80 leading-relaxed">
+        {dict.seo.howToSubtitle}
+      </p>
+    </div>
+
+    <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+      {
+        dict.seo.steps.map((step, index) => (
+          <article
+            id={`step-${index + 1}`}
+            class="relative flex flex-col rounded-2xl border border-espresso/10 dark:border-linen/10 bg-linen dark:bg-espresso p-6"
+          >
+            <span class="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-coral text-sm font-extrabold text-white shadow-sm mb-4">
+              {index + 1}
+            </span>
+            <h3 class="text-base sm:text-lg font-bold text-espresso dark:text-linen">
+              {step.title}
+            </h3>
+            <p class="mt-2 text-sm text-espresso/80 dark:text-linen/80 leading-relaxed">
+              {step.text}
+            </p>
+          </article>
+        ))
+      }
+    </div>
+  </section>
+
+  <!-- 2. Why 100% Client-Side PDF Conversion Protects Your Privacy -->
+  <section aria-labelledby="privacy-heading" class="rounded-3xl border border-slate/25 dark:border-slate-light/30 bg-slate/5 dark:bg-espresso-card p-6 sm:p-10">
+    <div class="max-w-3xl">
+      <h2 id="privacy-heading" class="text-xl sm:text-3xl font-extrabold tracking-tight text-espresso dark:text-linen">
+        {dict.seo.privacyTitle}
+      </h2>
+      <p class="mt-2.5 text-sm sm:text-base text-espresso/80 dark:text-linen/80 leading-relaxed">
+        {dict.seo.privacyLead}
+      </p>
+    </div>
+
+    <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+      {
+        dict.seo.privacyCards.map((card) => (
+          <article class="flex flex-col rounded-2xl border border-slate/20 dark:border-slate-light/25 bg-linen-light dark:bg-espresso p-6 shadow-sm">
+            <div class="mb-3 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-slate text-white">
+              <svg
+                class="h-5 w-5"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+              </svg>
+            </div>
+            <h3 class="text-base sm:text-lg font-bold text-espresso dark:text-linen">
+              {card.title}
+            </h3>
+            <p class="mt-2 text-sm text-espresso/80 dark:text-linen/80 leading-relaxed">
+              {card.text}
+            </p>
+          </article>
+        ))
+      }
+    </div>
+  </section>
+
+  <!-- 3. Interactive FAQ Section -->
+  <section aria-labelledby="faq-heading" class="max-w-4xl mx-auto">
+    <h2 id="faq-heading" class="text-xl sm:text-3xl font-extrabold tracking-tight text-center text-espresso dark:text-linen">
+      {dict.seo.faqTitle}
+    </h2>
+
+    <div class="mt-8 space-y-4">
+      {
+        dict.seo.faqs.map((faq, idx) => (
+          <details
+            open={idx === 0}
+            class="group rounded-2xl border border-espresso/15 dark:border-linen/15 bg-linen-light dark:bg-espresso-card p-5 transition-all"
+          >
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-4">
+              <h3 class="text-base sm:text-lg font-bold text-espresso dark:text-linen">
+                {faq.question}
+              </h3>
+              <span class="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-slate/10 dark:bg-slate-light/20 text-slate dark:text-linen transition-transform group-open:rotate-180">
+                <svg
+                  class="h-4 w-4"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="m6 9 6 6 6-6" />
+                </svg>
+              </span>
+            </summary>
+            <p class="mt-3 pt-3 border-t border-espresso/10 dark:border-linen/10 text-sm sm:text-base text-espresso/80 dark:text-linen/80 leading-relaxed">
+              {faq.answer}
+            </p>
+          </details>
+        ))
+      }
+    </div>
+  </section>
+</div>

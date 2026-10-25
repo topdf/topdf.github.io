@@ -1,0 +1,137 @@
+{
+  "meta": {
+    "title": "ToPDF | 無料オフライン JPGからPDFへの変換ツール (100%ブラウザ完結)",
+    "description": "1枚または複数のJPG、PNG、WebP画像をブラウザ内で即座に1つのPDFドキュメントに変換します。100%クライアントサイド処理、オフライン対応PWA、サーバー送信ゼロ。",
+    "ogTitle": "ToPDF | 無料オフライン JPGからPDFへの変換ツール (100%ブラウザ完結)",
+    "ogDescription": "超シンプルで100%クライアントサイドのJPG・PNG・WebPからPDFへの変換ツール。サーバーへのアップロード不要、用紙サイズ・向き・余白を自由に設定可能。",
+    "appName": "ToPDF - オフラインJPG・PDF変換ツール"
+  },
+  "navbar": {
+    "brandName": "ToPDF",
+    "brandAria": "ToPDF ホーム - オフラインJPGからPDFへの変換ツール",
+    "languageLabel": "言語",
+    "languageAria": "言語を選択",
+    "themeToggleLight": "ライト",
+    "themeToggleDark": "ダーク",
+    "themeToggleAria": "ライトモードとダークモードを切り替え",
+    "installPwa": "ホーム画面に追加",
+    "installPwaAria": "ToPDFウェブアプリをデバイスのホーム画面にインストール",
+    "installPwaHintTitle": "ToPDFオフラインアプリをインストール",
+    "installPwaHintBody": "ToPDFをオフラインで使用するには、ブラウザのメニューを開き「ホーム画面に追加」または「アプリをインストール」を選択してください。",
+    "installPwaClose": "閉じる",
+    "supportDev": "開発者を支援",
+    "supportDevAria": "Ko-fiで開発者を支援する"
+  },
+  "breadcrumbs": {
+    "ariaLabel": "パンくずリスト",
+    "home": "ホーム",
+    "current": "JPG PDF 変換ツール"
+  },
+  "hero": {
+    "h1": "JPGをオフラインで数秒以内にPDFへ変換",
+    "subtitle": "100%お使いのブラウザ内で処理されます。写真が外部サーバーに送信されることは一切なく、オフラインでも瞬時にPDFへ変換できます。"
+  },
+  "dropzone": {
+    "selectBtn": "JPG画像を選択",
+    "orDrop": "またはJPG、PNG、WebP画像をここにドロップ",
+    "inputAria": "PDFに変換するJPG、PNG、またはWebP画像をアップロード",
+    "privacyBadge": "100% プライバシー保護・ローカル処理",
+    "formatsBadge": "JPG・PNG・WebP対応",
+    "offlineBadge": "オフライン動作対応 (PWA)"
+  },
+  "workspace": {
+    "imagesCount": "選択された画像",
+    "clearAll": "すべてクリア",
+    "clearAllAria": "選択したすべての画像を削除",
+    "addMore": "画像を追加",
+    "addMoreAria": "PDFキューにさらに画像を追加",
+    "moveLeftAria": "画像の順番を前へ移動",
+    "moveRightAria": "画像の順番を後ろへ移動",
+    "rotateAria": "画像を時計回りに90度回転",
+    "removeAria": "リストから画像を削除",
+    "pageBadge": "ページ",
+    "dragHint": "カードをドラッグするか矢印ボタンでページ順を並べ替え"
+  },
+  "sidebar": {
+    "title": "画像からPDFへのオプション",
+    "ariaLabel": "画像からPDFへの変換オプション",
+    "orientationLabel": "ページの向き",
+    "portrait": "縦向き",
+    "landscape": "横向き",
+    "pageSizeLabel": "ページサイズ",
+    "pageSizeAria": "PDFのページサイズを選択",
+    "sizeA4": "A4 (297x210 mm)",
+    "sizeLetter": "USレター (215.9x279.4 mm)",
+    "sizeFit": "画像に合わせる (元の画像と同じサイズ)",
+    "marginLabel": "余白",
+    "marginNone": "余白なし",
+    "marginSmall": "小",
+    "marginBig": "大",
+    "mergeLabel": "すべての画像を1つのPDFファイルに結合する",
+    "convertBtn": "PDFに変換",
+    "convertingBtn": "PDFを生成中...",
+    "statusReady": "画像をPDFに変換する準備ができました。",
+    "statusConverting": "ブラウザメモリ内で画像をPDFに変換しています...",
+    "statusComplete": "PDFが生成され、ダウンロードが正常に開始されました。"
+  },
+  "seo": {
+    "howToTitle": "オフラインでJPGをPDFに変換する方法",
+    "howToSubtitle": "外部サーバーにファイルを一切アップロードせず、わずか3つの簡単なステップで画像を高品質なPDFドキュメントに変換できます。",
+    "steps": [
+      {
+        "title": "1. 画像を選択またはドラッグ＆ドロップ",
+        "text": "「JPG画像を選択」ボタンをクリックするか、1枚または複数のJPG、PNG、WebPファイルをドロップゾーンに直接ドラッグ＆ドロップします。"
+      },
+      {
+        "title": "2. 並び替え・回転・レイアウト調整",
+        "text": "ドラッグ操作や矢印ボタンでページの順番を並び替え、90度単位の回転、ページの向き（縦・横）、用紙サイズ（A4、USレター、画像サイズ）、余白を設定します。"
+      },
+      {
+        "title": "3. ブラウザ内で即座にPDFを作成＆ダウンロード",
+        "text": "「PDFに変換」をクリックすると、HTML5 CanvasとjsPDFを使用して端末内でPDFが生成され、待ち時間ゼロで即座にダウンロードされます。"
+      }
+    ],
+    "privacyTitle": "100%クライアントサイド変換がプライバシーを守る理由",
+    "privacyLead": "一般的なオンラインPDF変換サイトでは、身分証明書や領収書、契約書などの重要な画像を第三者のサーバーにアップロードする必要があります。ToPDFならそのリスクは完全にゼロです。",
+    "privacyCards": [
+      {
+        "title": "サーバーへのアップロード一切なし",
+        "text": "選択したすべての画像はお使いの端末のローカルメモリ（RAM）内だけで処理され、ネットワーク経由で外部へ送信されることはありません。"
+      },
+      {
+        "title": "HTML5 Canvas & jsPDF エンジン",
+        "text": "画像の回転、リサイズ、余白の調整、PDFファイルの生成はすべてブラウザ内で高速にネイティブ実行されます。"
+      },
+      {
+        "title": "オフライン対応PWAアプリ",
+        "text": "ナビゲーションバーの「ホーム画面に追加」をクリックすれば、機内モードやWi-Fiのない環境でも使えるアプリとしてインストールできます。"
+      }
+    ],
+    "faqTitle": "よくある質問 (FAQ)",
+    "faqs": [
+      {
+        "question": "選択したJPGやPNG画像はサーバーにアップロードされますか？",
+        "answer": "いいえ。ToPDFは100%クライアントサイドで動作します。JavaScript、HTML5 Canvas、jsPDFを使用してブラウザ内で直接PDFを作成するため、ファイルが端末の外に出ることはありません。"
+      },
+      {
+        "question": "インターネット接続なしでJPGをPDFに変換できますか？",
+        "answer": "はい！一度ページを開くか「ホーム画面に追加」からインストールすると、PWAのService Workerがアプリ全体をキャッシュするため、完全なオフライン環境でも変換できます。"
+      },
+      {
+        "question": "JPG以外にどの画像形式に対応していますか？",
+        "answer": "標準的なJPG・JPEG画像に加え、PNG（透過背景は自動的にきれいな白背景として合成されます）およびWebP画像にネイティブ対応しています。"
+      },
+      {
+        "question": "ファイルサイズの制限や透かし（ウォーターマーク）はありますか？",
+        "answer": "回数制限、有料プランへの誘導、透かしは一切ありません。お使いの端末で直接処理するため、高解像度の写真も無料で制限なく1つのPDFにまとめられます。"
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "100%クライアントサイド・オフライン画像PDF変換ツール。圧倒的なスピードと完全なプライバシー保護を実現。",
+    "languagesHeading": "対応言語",
+    "supportText": "ToPDFが役に立ちましたら、個人開発の応援をお願いします：",
+    "supportCta": "Ko-fiで開発者にコーヒーを贈る",
+    "copyright": "All rights reserved. アップロードされたファイルのデータ収集は一切行いません。"
+  }
+}

@@ -1,0 +1,94 @@
+---
+import { SUPPORTED_LANGUAGES, getDictionary, type LangCode } from '@/i18n/config';
+
+interface Props {
+  lang: LangCode;
+}
+
+const { lang } = Astro.props;
+const dict = getDictionary(lang);
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="mt-auto border-t border-espresso/15 dark:border-linen/15 bg-linen-dark/50 dark:bg-espresso-card/70">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+      <!-- Brand & Privacy Statement -->
+      <div class="md:col-span-5 space-y-3">
+        <div class="flex items-center gap-2.5">
+          <span class="flex h-8 w-8 items-center justify-center rounded-lg bg-espresso dark:bg-espresso border border-slate text-xs font-extrabold text-coral">
+            PDF
+          </span>
+          <span class="text-lg font-extrabold tracking-tight text-espresso dark:text-linen">
+            To<span class="text-coral">PDF</span>
+          </span>
+        </div>
+        <p class="text-sm text-espresso/80 dark:text-linen/80 max-w-sm leading-relaxed">
+          {dict.footer.tagline}
+        </p>
+      </div>
+
+      <!-- 8-Language Localization Quick Links -->
+      <div class="md:col-span-4 space-y-2.5">
+        <h2 class="text-xs font-bold uppercase tracking-wider text-espresso/75 dark:text-linen/75">
+          {dict.footer.languagesHeading}
+        </h2>
+        <ul class="flex flex-wrap gap-2">
+          {
+            SUPPORTED_LANGUAGES.map((item) => (
+              <li>
+                <a
+                  href={item.path}
+                  hreflang={item.hreflang}
+                  class:list={[
+                    'inline-flex items-center gap-1.5 rounded-lg px-2.5 py-1 text-xs font-semibold transition-colors',
+                    item.code === lang
+                      ? 'bg-slate text-white'
+                      : 'border border-espresso/15 dark:border-linen/15 bg-linen-light dark:bg-espresso text-espresso/85 dark:text-linen/85 hover:border-slate'
+                  ]}
+                >
+                  <span class="text-[10px] font-bold opacity-85">{item.badge}</span>
+                  <span>{item.label}</span>
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+
+      <!-- Developer Support CTA -->
+      <div class="md:col-span-3 space-y-3">
+        <p class="text-xs font-semibold text-espresso/80 dark:text-linen/80">
+          {dict.footer.supportText}
+        </p>
+        <a
+          href="https://ko-fi.com/kishara"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={dict.navbar.supportDevAria}
+          class="inline-flex items-center gap-2 rounded-xl bg-coral hover:bg-coral-hover px-4 py-2.5 text-xs sm:text-sm font-bold text-white shadow-sm transition-colors"
+        >
+          <svg
+            class="h-4 w-4 shrink-0"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path>
+          </svg>
+          <span>{dict.footer.supportCta}</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="mt-8 pt-6 border-t border-espresso/10 dark:border-linen/10 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-espresso/65 dark:text-linen/65">
+      <p>© {currentYear} ToPDF (topdf.github.io). {dict.footer.copyright}</p>
+      <p class="font-medium">100% Client-Side • HTML5 Canvas + jsPDF</p>
+    </div>
+  </div>
+</footer>

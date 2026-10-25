@@ -1,0 +1,137 @@
+{
+  "meta": {
+    "title": "ToPDF | 免费离线 JPG 转 PDF 转换器 (100% 浏览器本地处理)",
+    "description": "在浏览器中即刻将单张或多张 JPG、PNG 和 WebP 图片合并转换为一份 PDF 文档。100% 纯前端处理，支持离线 PWA 安装，零服务器上传。",
+    "ogTitle": "ToPDF | 免费离线 JPG 转 PDF 转换器 (100% 浏览器本地处理)",
+    "ogDescription": "极简、100% 客户端运行的 JPG、PNG 和 WebP 转 PDF 工具。无需上传服务器，支持自定义页面尺寸、方向与页边距。",
+    "appName": "ToPDF - 离线 JPG 转 PDF 转换器"
+  },
+  "navbar": {
+    "brandName": "ToPDF",
+    "brandAria": "ToPDF 首页 - 离线 JPG 转 PDF 转换器",
+    "languageLabel": "语言",
+    "languageAria": "选择语言",
+    "themeToggleLight": "浅色",
+    "themeToggleDark": "深色",
+    "themeToggleAria": "切换浅色与深色主题",
+    "installPwa": "添加到主屏幕",
+    "installPwaAria": "将 ToPDF 网页应用安装到设备主屏幕",
+    "installPwaHintTitle": "安装 ToPDF 离线应用",
+    "installPwaHintBody": "如需离线使用 ToPDF：请打开浏览器菜单并选择“添加到主屏幕”或“安装应用”。",
+    "installPwaClose": "知道了",
+    "supportDev": "支持开发者",
+    "supportDevAria": "在 Ko-fi 上支持开发者"
+  },
+  "breadcrumbs": {
+    "ariaLabel": "面包屑导航",
+    "home": "首页",
+    "current": "JPG 转 PDF 转换器"
+  },
+  "hero": {
+    "h1": "几秒内离线将 JPG 转换为 PDF",
+    "subtitle": "100% 在您的浏览器本地运行。您的照片绝不会离开您的设备——零服务器上传、瞬间生成、断网可用。"
+  },
+  "dropzone": {
+    "selectBtn": "选择 JPG 图片",
+    "orDrop": "或将 JPG、PNG 和 WebP 图片拖放到此处",
+    "inputAria": "选择要转换为 PDF 的 JPG、PNG 或 WebP 图片",
+    "privacyBadge": "100% 隐私安全 & 本地处理",
+    "formatsBadge": "支持 JPG, PNG, WebP",
+    "offlineBadge": "支持离线使用 (PWA)"
+  },
+  "workspace": {
+    "imagesCount": "已选图片",
+    "clearAll": "全部清空",
+    "clearAllAria": "移除所有已选图片",
+    "addMore": "添加更多图片",
+    "addMoreAria": "向 PDF 队列添加更多图片",
+    "moveLeftAria": "将图片顺序向前移动",
+    "moveRightAria": "将图片顺序向后移动",
+    "rotateAria": "顺时针旋转图片 90 度",
+    "removeAria": "从列表中移除此图片",
+    "pageBadge": "第",
+    "dragHint": "拖动卡片或使用左右箭头调整页面顺序"
+  },
+  "sidebar": {
+    "title": "图片转 PDF 选项",
+    "ariaLabel": "图片转 PDF 转换设置",
+    "orientationLabel": "页面方向",
+    "portrait": "纵向 (Portrait)",
+    "landscape": "横向 (Landscape)",
+    "pageSizeLabel": "页面尺寸",
+    "pageSizeAria": "选择 PDF 页面尺寸",
+    "sizeA4": "A4 (297x210 毫米)",
+    "sizeLetter": "US Letter 美式信纸 (215.9x279.4 毫米)",
+    "sizeFit": "适应图片尺寸 (与原图尺寸一致)",
+    "marginLabel": "页边距",
+    "marginNone": "无边距",
+    "marginSmall": "小边距",
+    "marginBig": "大边距",
+    "mergeLabel": "将所有图片合并为一个 PDF 文件",
+    "convertBtn": "转换为 PDF",
+    "convertingBtn": "正在生成 PDF...",
+    "statusReady": "已准备好将图片转换为 PDF。",
+    "statusConverting": "正在浏览器内存中将您的图片转换为 PDF...",
+    "statusComplete": "PDF 生成成功，已开始下载。"
+  },
+  "seo": {
+    "howToTitle": "如何离线将 JPG 转换为 PDF",
+    "howToSubtitle": "无需将文件上传到任何外部服务器，只需简单三步即可将图片转换为清晰、可直接打印的 PDF 文档。",
+    "steps": [
+      {
+        "title": "1. 选择或拖入您的图片",
+        "text": "点击“选择 JPG 图片”按钮，或直接将单张、多张 JPG、PNG、WebP 图片拖放到上传区域中。"
+      },
+      {
+        "title": "2. 排序、旋转与自定义页面布局",
+        "text": "通过拖放或方向键调整页面顺序，按 90° 步进旋转单张照片，并选择页面方向（纵向/横向）、纸张大小（A4、US Letter 或适应原图）以及页边距。"
+      },
+      {
+        "title": "3. 浏览器本地极速生成并下载 PDF",
+        "text": "点击“转换为 PDF”，系统将通过 HTML5 Canvas 与 jsPDF 在本地内存中直接构建文档，立即触发下载，无需云端排队。"
+      }
+    ],
+    "privacyTitle": "为什么 100% 纯前端 PDF 转换能彻底保护您的隐私",
+    "privacyLead": "传统的在线 PDF 转换器要求您将身份证扫描件、发票、收据或合同上传到第三方远程服务器。ToPDF 彻底消除了这一隐私泄露风险。",
+    "privacyCards": [
+      {
+        "title": "零服务器上传",
+        "text": "您选择的每一张图片都严格保留在您设备的本地内存 (RAM) 中，绝不会通过网络发送任何文件数据。"
+      },
+      {
+        "title": "HTML5 Canvas 与 jsPDF 引擎",
+        "text": "图片旋转、尺寸缩放、边距排版与 PDF 二进制封装均在您的浏览器线程内原生高速完成。"
+      },
+      {
+        "title": "可安装的离线 PWA 应用",
+        "text": "点击顶部导航栏的“添加到主屏幕”，即可将 ToPDF 安装为独立应用，在飞行模式或无 Wi-Fi 环境下照常运行。"
+      }
+    ],
+    "faqTitle": "常见问题解答 (FAQ)",
+    "faqs": [
+      {
+        "question": "我的 JPG 和 PNG 图片会上传到服务器吗？",
+        "answer": "绝对不会。ToPDF 是 100% 纯客户端应用。所有图片处理与 PDF 生成均通过 JavaScript、HTML5 Canvas 和 jsPDF 直接在您的浏览器内完成，文件从不离开您的电脑或手机。"
+      },
+      {
+        "question": "没有网络连接时可以把 JPG 转成 PDF 吗？",
+        "answer": "可以！只要加载过一次 ToPDF 或通过“添加到主屏幕”安装应用，我们的 PWA Service Worker 就会缓存全部程序资源，让您完全离线转换 PDF。"
+      },
+      {
+        "question": "除了 JPG 之外还支持哪些图片格式？",
+        "answer": "除标准 JPG 与 JPEG 照片外，ToPDF 原生支持 PNG（自动将透明背景合成为干净的纯白 PDF 页面）和 WebP 格式图片。"
+      },
+      {
+        "question": "转换后的 PDF 有文件大小限制或水印吗？",
+        "answer": "没有任何数量限制、付费墙或水印。由于转换完全使用您本机的算力，您可以免费将数十张高分辨率照片合成为一个干净的 PDF 文件。"
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "100% 本地离线图片转 PDF 工具。专为极致速度与绝对隐私打造。",
+    "languagesHeading": "支持的语言",
+    "supportText": "喜欢 ToPDF？欢迎支持独立开源 Web 工具开发者：",
+    "supportCta": "在 Ko-fi 上请我喝杯咖啡",
+    "copyright": "保留所有权利。零文件上传与零隐私收集。"
+  }
+}

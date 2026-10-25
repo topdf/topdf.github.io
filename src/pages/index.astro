@@ -1,0 +1,22 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import Navbar from '@/components/Navbar.astro';
+import Breadcrumbs from '@/components/Breadcrumbs.astro';
+import PdfConverterIsland from '@/components/PdfConverterIsland';
+import SeoContentSection from '@/components/SeoContentSection.astro';
+import Footer from '@/components/Footer.astro';
+import { getDictionary } from '@/i18n/config';
+
+const lang = 'en';
+const dict = getDictionary(lang);
+---
+
+<Layout lang={lang}>
+  <Navbar lang={lang} />
+  <main id="main-content" class="flex-1">
+    <Breadcrumbs lang={lang} />
+    <PdfConverterIsland client:load dict={dict} />
+    <SeoContentSection lang={lang} />
+  </main>
+  <Footer lang={lang} />
+</Layout>

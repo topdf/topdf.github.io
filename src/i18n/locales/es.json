@@ -1,0 +1,137 @@
+{
+  "meta": {
+    "title": "ToPDF | Convertidor Gratis de JPG a PDF Sin Conexión (100% Local)",
+    "description": "Convierte una o varias imágenes JPG, PNG y WebP en un único documento PDF al instante desde tu navegador. 100% en tu dispositivo, PWA sin conexión y sin subir archivos.",
+    "ogTitle": "ToPDF | Convertidor Gratis de JPG a PDF Sin Conexión (100% Local)",
+    "ogDescription": "Convertidor ultraminimalista de JPG, PNG y WebP a PDF 100% del lado del cliente. Cero subidas al servidor, tamaño de página, orientación y márgenes ajustables.",
+    "appName": "ToPDF - Convertidor de JPG a PDF Sin Conexión"
+  },
+  "navbar": {
+    "brandName": "ToPDF",
+    "brandAria": "Inicio de ToPDF - Convertidor de JPG a PDF sin conexión",
+    "languageLabel": "Idioma",
+    "languageAria": "Seleccionar idioma",
+    "themeToggleLight": "Claro",
+    "themeToggleDark": "Oscuro",
+    "themeToggleAria": "Cambiar entre tema claro y oscuro",
+    "installPwa": "Añadir a pantalla de inicio",
+    "installPwaAria": "Instalar la aplicación web ToPDF en la pantalla de inicio",
+    "installPwaHintTitle": "Instalar aplicación ToPDF sin conexión",
+    "installPwaHintBody": "Para instalar ToPDF y usarlo sin internet: abre el menú de tu navegador y selecciona 'Añadir a pantalla de inicio' o 'Instalar aplicación'.",
+    "installPwaClose": "Entendido",
+    "supportDev": "Apoyar al desarrollador",
+    "supportDevAria": "Apoyar al desarrollador en Ko-fi"
+  },
+  "breadcrumbs": {
+    "ariaLabel": "Migas de pan",
+    "home": "Inicio",
+    "current": "Convertidor de JPG a PDF"
+  },
+  "hero": {
+    "h1": "Convierte JPG a PDF Sin Conexión en Segundos",
+    "subtitle": "100% procesado en tu navegador. Tus fotos nunca salen de tu dispositivo: cero subidas a servidores, conversión instantánea y funciona sin internet."
+  },
+  "dropzone": {
+    "selectBtn": "Seleccionar imágenes JPG",
+    "orDrop": "o arrastra y suelta imágenes JPG, PNG y WebP aquí",
+    "inputAria": "Subir imágenes JPG, PNG o WebP para convertir a PDF",
+    "privacyBadge": "100% Privado y Local",
+    "formatsBadge": "Soporta JPG, PNG, WebP",
+    "offlineBadge": "Funciona Sin Internet (PWA)"
+  },
+  "workspace": {
+    "imagesCount": "Imágenes seleccionadas",
+    "clearAll": "Borrar todo",
+    "clearAllAria": "Eliminar todas las imágenes seleccionadas",
+    "addMore": "Añadir más imágenes",
+    "addMoreAria": "Añadir más imágenes a la cola de PDF",
+    "moveLeftAria": "Mover imagen hacia atrás en el orden",
+    "moveRightAria": "Mover imagen hacia adelante en el orden",
+    "rotateAria": "Girar imagen 90 grados a la derecha",
+    "removeAria": "Eliminar imagen de la lista",
+    "pageBadge": "Página",
+    "dragHint": "Arrastra las tarjetas o usa las flechas para reordenar"
+  },
+  "sidebar": {
+    "title": "Opciones de Imagen a PDF",
+    "ariaLabel": "Opciones de conversión de imagen a PDF",
+    "orientationLabel": "Orientación de página",
+    "portrait": "Vertical",
+    "landscape": "Horizontal",
+    "pageSizeLabel": "Tamaño de página",
+    "pageSizeAria": "Seleccionar tamaño de página PDF",
+    "sizeA4": "A4 (297x210 mm)",
+    "sizeLetter": "Carta EE. UU. (215.9x279.4 mm)",
+    "sizeFit": "Ajustar a la imagen (Mismo tamaño que la foto)",
+    "marginLabel": "Margen",
+    "marginNone": "Sin margen",
+    "marginSmall": "Pequeño",
+    "marginBig": "Grande",
+    "mergeLabel": "Combinar todas las imágenes en un solo archivo PDF",
+    "convertBtn": "Convertir a PDF",
+    "convertingBtn": "Generando PDF...",
+    "statusReady": "Listo para convertir imágenes a PDF.",
+    "statusConverting": "Convirtiendo tus imágenes a PDF en la memoria del navegador...",
+    "statusComplete": "PDF generado y descarga iniciada con éxito."
+  },
+  "seo": {
+    "howToTitle": "Cómo Convertir JPG a PDF Sin Conexión",
+    "howToSubtitle": "Transforma tus imágenes en documentos PDF nítidos y listos para imprimir en tres sencillos pasos sin enviar archivos a ningún servidor externo.",
+    "steps": [
+      {
+        "title": "1. Selecciona o Arrastra tus Imágenes",
+        "text": "Haz clic en el botón 'Seleccionar imágenes JPG' o arrastra uno o varios archivos JPG, PNG o WebP directamente a la zona de carga."
+      },
+      {
+        "title": "2. Ordena, Gira y Personaliza el Diseño",
+        "text": "Reordena las páginas arrastrando o con las flechas, gira fotos individuales en pasos de 90° y elige la orientación (Vertical/Horizontal), tamaño de página (A4, Carta o Ajustar) y márgenes."
+      },
+      {
+        "title": "3. Descarga Instantánea de PDF en tu Navegador",
+        "text": "Haz clic en 'Convertir a PDF' para generar tu documento localmente con HTML5 Canvas y jsPDF. Tu PDF se descarga al instante sin colas en la nube."
+      }
+    ],
+    "privacyTitle": "Por Qué la Conversión de PDF 100% Local Protege tu Privacidad",
+    "privacyLead": "Los convertidores de PDF en línea tradicionales requieren que subas documentos personales, identificaciones, recibos o contratos a servidores remotos. ToPDF elimina ese riesgo por completo.",
+    "privacyCards": [
+      {
+        "title": "Cero Subidas a Servidores",
+        "text": "Cada imagen que seleccionas permanece estrictamente en la memoria RAM local de tu dispositivo. Nunca se envían tus archivos por la red."
+      },
+      {
+        "title": "Motor HTML5 Canvas y jsPDF",
+        "text": "La rotación, el escalado, los márgenes y el ensamblaje del PDF se ejecutan de forma nativa en tu navegador a máxima velocidad."
+      },
+      {
+        "title": "PWA Instalable Sin Conexión",
+        "text": "Pulsa 'Añadir a pantalla de inicio' en la barra superior para instalar ToPDF como aplicación independiente que funciona sin Wi-Fi."
+      }
+    ],
+    "faqTitle": "Preguntas Frecuentes (FAQ)",
+    "faqs": [
+      {
+        "question": "¿Mis imágenes JPG y PNG se suben a algún servidor?",
+        "answer": "No. ToPDF funciona 100% del lado del cliente. Todo el procesamiento de imágenes y la creación del PDF ocurren directamente en tu navegador web usando JavaScript, HTML5 Canvas y jsPDF."
+      },
+      {
+        "question": "¿Puedo convertir JPG a PDF sin conexión a internet?",
+        "answer": "¡Sí! Una vez que cargas ToPDF o lo instalas mediante el botón 'Añadir a pantalla de inicio', nuestro Service Worker guarda la aplicación en caché para que puedas convertir imágenes completamente offline."
+      },
+      {
+        "question": "¿Qué formatos de imagen son compatibles además de JPG?",
+        "answer": "Además de fotos JPG y JPEG estándar, ToPDF soporta de forma nativa imágenes PNG (con fondo blanco limpio para transparencias) y WebP."
+      },
+      {
+        "question": "¿Hay límite de tamaño o marcas de agua en los PDF?",
+        "answer": "No existen límites artificiales, muros de pago ni marcas de agua. Como tu propio dispositivo procesa los archivos, puedes unir decenas de fotos en alta resolución totalmente gratis."
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "Convertidor de Imagen a PDF 100% Local y Sin Conexión. Diseñado para velocidad y privacidad absoluta.",
+    "languagesHeading": "Idiomas Disponibles",
+    "supportText": "¿Te gusta ToPDF? Apoya las herramientas web abiertas:",
+    "supportCta": "Invítame a un café en Ko-fi",
+    "copyright": "Todos los derechos reservados. Cero recopilación de archivos subidos."
+  }
+}

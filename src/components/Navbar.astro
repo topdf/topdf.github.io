@@ -1,0 +1,453 @@
+---
+import { SUPPORTED_LANGUAGES, getDictionary, getLanguageMeta, type LangCode } from '@/i18n/config';
+
+interface Props {
+  lang: LangCode;
+}
+
+const { lang } = Astro.props;
+const dict = getDictionary(lang);
+const currentLang = getLanguageMeta(lang);
+---
+
+<header class="sticky top-0 z-40 w-full border-b border-espresso/10 dark:border-linen/10 bg-linen/95 dark:bg-espresso/95 backdrop-blur-md">
+  <nav
+    class="mx-auto flex max-w-7xl items-center justify-between px-3 sm:px-6 lg:px-8 h-16"
+    aria-label="Primary Navigation"
+  >
+    <!-- 1. Brand Logo + Icon -->
+    <a
+      href={currentLang.path}
+      aria-label={dict.navbar.brandAria}
+      class="group flex items-center gap-2.5 rounded-xl py-1.5 px-2 transition-transform active:scale-95"
+    >
+      <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-espresso dark:bg-espresso-card border-2 border-slate dark:border-slate-light shadow-sm">
+        <svg
+          class="h-6 w-6"
+          viewBox="0 0 32 32"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true"
+        >
+          <rect x="4" y="3" width="16" height="21" rx="2.5" fill="#F5EBDD" stroke="#315B8C" stroke-width="2" />
+          <circle cx="9.5" cy="8.5" r="1.8" fill="#F2765E" />
+          <path d="M6.5 17L10 13L13.5 16.5L16 14L18 17H6.5Z" fill="#315B8C" />
+          <rect x="13" y="11" width="15" height="18" rx="3" fill="#F2765E" />
+          <text
+            x="20.5"
+            y="22.5"
+            text-anchor="middle"
+            fill="#FFFFFF"
+            font-family="system-ui, sans-serif"
+            font-weight="800"
+            font-size="6.2"
+          >
+            PDF
+          </text>
+        </svg>
+      </span>
+      <span class="text-xl font-extrabold tracking-tight text-espresso dark:text-linen">
+        To<span class="text-coral">PDF</span>
+      </span>
+    </a>
+
+    <!-- Right Controls (Strictly Icons-Only below md: 768px, Full Labels + Icons on md: and up) -->
+    <div class="flex items-center gap-1.5 sm:gap-2.5">
+      <!-- 2. 8-Language Selector Dropdown -->
+      <div class="relative" id="lang-dropdown-wrapper">
+        <button
+          type="button"
+          id="lang-dropdown-btn"
+          aria-label={dict.navbar.languageAria}
+          aria-haspopup="true"
+          aria-expanded="false"
+          aria-controls="lang-dropdown-menu"
+          class="inline-flex h-10 items-center justify-center gap-2 rounded-xl border border-espresso/15 dark:border-linen/15 bg-linen-light dark:bg-espresso-card px-2.5 md:px-3.5 text-sm font-semibold text-espresso dark:text-linen hover:border-slate dark:hover:border-slate-light transition-colors"
+        >
+          <!-- Globe Icon -->
+          <svg
+            class="h-4 w-4 shrink-0 text-slate dark:text-slate-light"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <circle cx="12" cy="12" r="10"></circle>
+            <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path>
+            <path d="M2 12h20"></path>
+          </svg>
+          <span class="hidden md:inline-flex items-center gap-1.5">
+            <span class="rounded bg-slate px-1.5 py-0.5 text-[11px] font-bold uppercase leading-none text-white">
+              {currentLang.badge}
+            </span>
+            <span>{currentLang.label}</span>
+          </span>
+          <svg
+            class="hidden md:inline h-3.5 w-3.5 opacity-70"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="m6 9 6 6 6-6"></path>
+          </svg>
+        </button>
+
+        <!-- Dropdown Menu -->
+        <div
+          id="lang-dropdown-menu"
+          role="menu"
+          aria-label={dict.navbar.languageLabel}
+          class="hidden absolute right-0 mt-2 w-48 origin-top-right rounded-2xl border border-espresso/15 dark:border-linen/15 bg-linen-light dark:bg-espresso-card p-1.5 shadow-soft ring-1 ring-black/5 focus:outline-none z-50"
+        >
+          {
+            SUPPORTED_LANGUAGES.map((item) => {
+              const isActive = item.code === lang;
+              return (
+                <a
+                  href={item.path}
+                  role="menuitem"
+                  hreflang={item.hreflang}
+                  aria-current={isActive ? 'page' : undefined}
+                  class:list={[
+                    'flex items-center justify-between rounded-xl px-3 py-2 text-sm font-medium transition-colors',
+                    isActive
+                      ? 'bg-slate/15 dark:bg-slate-light/20 text-espresso dark:text-linen font-bold border border-slate/40 dark:border-slate-light/40'
+                      : 'text-espresso/90 dark:text-linen/90 hover:bg-espresso/5 dark:hover:bg-linen/10'
+                  ]}
+                >
+                  <span class="flex items-center gap-2.5">
+                    <span class="inline-flex w-7 justify-center rounded bg-slate px-1.5 py-0.5 text-[11px] font-bold uppercase text-white">
+                      {item.badge}
+                    </span>
+                    <span>{item.label}</span>
+                  </span>
+                  {isActive && (
+                    <svg
+                      class="h-4 w-4 text-coral"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
+                    >
+                      <polyline points="20 6 9 17 4 12" />
+                    </svg>
+                  )}
+                </a>
+              );
+            })
+          }
+        </div>
+      </div>
+
+      <!-- 3. Light / Dark Theme Toggle -->
+      <button
+        type="button"
+        id="theme-toggle-btn"
+        aria-label={dict.navbar.themeToggleAria}
+        class="inline-flex h-10 items-center justify-center gap-2 rounded-xl border border-espresso/15 dark:border-linen/15 bg-linen-light dark:bg-espresso-card px-2.5 md:px-3.5 text-sm font-semibold text-espresso dark:text-linen hover:border-slate dark:hover:border-slate-light transition-colors"
+      >
+        <!-- Sun Icon (shown in dark mode) -->
+        <svg
+          class="hidden dark:block h-4 w-4 shrink-0 text-coral"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <circle cx="12" cy="12" r="4"></circle>
+          <path d="M12 2v2"></path>
+          <path d="M12 20v2"></path>
+          <path d="m4.93 4.93 1.41 1.41"></path>
+          <path d="m17.66 17.66 1.41 1.41"></path>
+          <path d="M2 12h2"></path>
+          <path d="M20 12h2"></path>
+          <path d="m6.34 17.66-1.41 1.41"></path>
+          <path d="m19.07 4.93-1.41 1.41"></path>
+        </svg>
+        <!-- Moon Icon (shown in light mode) -->
+        <svg
+          class="block dark:hidden h-4 w-4 shrink-0 text-slate"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+        </svg>
+        <span class="hidden md:inline dark:hidden">{dict.navbar.themeToggleDark}</span>
+        <span class="hidden dark:md:inline">{dict.navbar.themeToggleLight}</span>
+      </button>
+
+      <!-- 4. PWA 'Add to Home Screen' Button -->
+      <button
+        type="button"
+        id="pwa-install-btn"
+        aria-label={dict.navbar.installPwaAria}
+        class="inline-flex h-10 items-center justify-center gap-2 rounded-xl border border-slate/30 dark:border-slate-light/40 bg-slate/10 dark:bg-slate-light/15 px-2.5 md:px-3.5 text-sm font-semibold text-espresso dark:text-linen hover:bg-slate hover:text-white dark:hover:bg-slate-light dark:hover:text-espresso transition-colors"
+      >
+        <svg
+          class="h-4 w-4 shrink-0"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+          <polyline points="7 10 12 15 17 10"></polyline>
+          <line x1="12" x2="12" y1="15" y2="3"></line>
+        </svg>
+        <span class="hidden md:inline">{dict.navbar.installPwa}</span>
+      </button>
+
+      <!-- 5. Support the Developer CTA (Ko-fi) -->
+      <a
+        href="https://ko-fi.com/kishara"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label={dict.navbar.supportDevAria}
+        class="inline-flex h-10 items-center justify-center gap-2 rounded-xl bg-coral hover:bg-coral-hover active:bg-coral-active px-2.5 md:px-4 text-sm font-bold text-white shadow-sm transition-colors"
+      >
+        <svg
+          class="h-4 w-4 shrink-0"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2.2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path>
+        </svg>
+        <span class="hidden md:inline">{dict.navbar.supportDev}</span>
+      </a>
+    </div>
+  </nav>
+</header>
+
+<!-- Full-Viewport PWA Install Dialog (Placed OUTSIDE <header> so backdrop-blur never clips fixed positioning) -->
+<div
+  id="pwa-install-modal"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="pwa-modal-title"
+  class="hidden fixed inset-0 z-[100] flex items-center justify-center bg-espresso/60 dark:bg-black/70 p-4 backdrop-blur-sm"
+>
+  <div class="w-full max-w-md rounded-3xl border-2 border-slate/30 dark:border-slate-light/40 bg-linen dark:bg-espresso-card p-6 sm:p-7 text-espresso dark:text-linen shadow-2xl">
+    <div class="flex items-start justify-between gap-3">
+      <div class="flex items-center gap-3">
+        <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-coral text-white shadow-sm">
+          <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="7 10 12 15 17 10"></polyline>
+            <line x1="12" x2="12" y1="15" y2="3"></line>
+          </svg>
+        </span>
+        <h2 id="pwa-modal-title" class="text-lg sm:text-xl font-extrabold">
+          {dict.navbar.installPwaHintTitle}
+        </h2>
+      </div>
+      <button
+        type="button"
+        id="pwa-modal-close-icon"
+        aria-label={dict.navbar.installPwaClose}
+        class="rounded-xl p-1.5 text-espresso/70 dark:text-linen/70 hover:bg-espresso/10 dark:hover:bg-linen/10 transition-colors"
+      >
+        <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path d="M18 6 6 18M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+
+    <p class="mt-4 text-sm sm:text-base leading-relaxed text-espresso/85 dark:text-linen/85">
+      {dict.navbar.installPwaHintBody}
+    </p>
+
+    <div class="mt-6 flex flex-wrap items-center justify-end gap-3">
+      <button
+        type="button"
+        id="pwa-shortcut-download-btn"
+        class="inline-flex items-center gap-2 rounded-xl bg-coral hover:bg-coral-hover px-5 py-2.5 text-sm font-bold text-white shadow-sm transition-colors"
+      >
+        <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+          <polyline points="7 10 12 15 17 10"></polyline>
+          <line x1="12" x2="12" y1="15" y2="3"></line>
+        </svg>
+        <span>{dict.navbar.installPwa}</span>
+      </button>
+      <button
+        type="button"
+        id="pwa-modal-close-btn"
+        class="rounded-xl border border-espresso/20 dark:border-linen/20 px-4 py-2.5 text-sm font-bold text-espresso dark:text-linen hover:border-slate transition-colors"
+      >
+        {dict.navbar.installPwaClose}
+      </button>
+    </div>
+  </div>
+</div>
+
+<script is:inline>
+  (function () {
+    // Language dropdown toggle
+    const langBtn = document.getElementById('lang-dropdown-btn');
+    const langMenu = document.getElementById('lang-dropdown-menu');
+    const langWrapper = document.getElementById('lang-dropdown-wrapper');
+
+    if (langBtn && langMenu && langWrapper) {
+      langBtn.addEventListener('click', function (e) {
+        e.stopPropagation();
+        const isHidden = langMenu.classList.contains('hidden');
+        langMenu.classList.toggle('hidden', !isHidden);
+        langBtn.setAttribute('aria-expanded', String(isHidden));
+      });
+
+      document.addEventListener('click', function (e) {
+        if (!langWrapper.contains(e.target)) {
+          langMenu.classList.add('hidden');
+          langBtn.setAttribute('aria-expanded', 'false');
+        }
+      });
+
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') {
+          langMenu.classList.add('hidden');
+          langBtn.setAttribute('aria-expanded', 'false');
+        }
+      });
+    }
+
+    // Theme toggle
+    const themeBtn = document.getElementById('theme-toggle-btn');
+    if (themeBtn) {
+      themeBtn.addEventListener('click', function () {
+        const root = document.documentElement;
+        const isDark = root.classList.toggle('dark');
+        try {
+          localStorage.setItem('topdf-theme', isDark ? 'dark' : 'light');
+        } catch (_) {}
+      });
+    }
+
+    // PWA 'Add to Home Screen' handler
+    const pwaBtn = document.getElementById('pwa-install-btn');
+    const pwaModal = document.getElementById('pwa-install-modal');
+    const pwaCloseBtn = document.getElementById('pwa-modal-close-btn');
+    const pwaCloseIcon = document.getElementById('pwa-modal-close-icon');
+    const pwaShortcutBtn = document.getElementById('pwa-shortcut-download-btn');
+
+    window.addEventListener('beforeinstallprompt', function (e) {
+      e.preventDefault();
+      window.__deferredPwaPrompt = e;
+    });
+
+    async function triggerNativePromptIfAvailable() {
+      const promptEvent = window.__deferredPwaPrompt;
+      if (promptEvent) {
+        window.__deferredPwaPrompt = null;
+        await promptEvent.prompt();
+        await promptEvent.userChoice;
+        return true;
+      }
+      return false;
+    }
+
+    if (pwaBtn) {
+      pwaBtn.addEventListener('click', async function () {
+        // 1. Immediately trigger native browser install prompt if available
+        if (await triggerNativePromptIfAvailable()) {
+          return;
+        }
+
+        // 2. If Service Worker just registered, wait up to 500ms for beforeinstallprompt to fire
+        const prompted = await new Promise(function (resolve) {
+          let settled = false;
+          function onReady() {
+            if (settled) return;
+            settled = true;
+            window.removeEventListener('topdf:pwa-ready', onReady);
+            triggerNativePromptIfAvailable().then(resolve);
+          }
+          window.addEventListener('topdf:pwa-ready', onReady);
+          setTimeout(function () {
+            if (settled) return;
+            settled = true;
+            window.removeEventListener('topdf:pwa-ready', onReady);
+            triggerNativePromptIfAvailable().then(resolve);
+          }, 500);
+        });
+
+        if (prompted) return;
+
+        // 3. Fallback when already installed or browser lacks beforeinstallprompt
+        if (pwaModal) {
+          pwaModal.classList.remove('hidden');
+        }
+      });
+    }
+
+    if (pwaShortcutBtn) {
+      pwaShortcutBtn.addEventListener('click', async function () {
+        if (await triggerNativePromptIfAvailable()) {
+          closePwaModal();
+          return;
+        }
+        // Create a 1-click desktop/home launcher shortcut file (.url)
+        const appUrl = window.location.origin + window.location.pathname;
+        const shortcutContent = '[InternetShortcut]\r\nURL=' + appUrl + '\r\nIconIndex=0\r\n';
+        const blob = new Blob([shortcutContent], { type: 'application/internet-shortcut' });
+        const link = document.createElement('a');
+        link.href = URL.createObjectURL(blob);
+        link.download = 'ToPDF - Offline JPG to PDF.url';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        setTimeout(function () {
+          URL.revokeObjectURL(link.href);
+        }, 1000);
+        closePwaModal();
+      });
+    }
+
+    function closePwaModal() {
+      if (pwaModal) pwaModal.classList.add('hidden');
+    }
+
+    if (pwaCloseBtn) pwaCloseBtn.addEventListener('click', closePwaModal);
+    if (pwaCloseIcon) pwaCloseIcon.addEventListener('click', closePwaModal);
+    if (pwaModal) {
+      pwaModal.addEventListener('click', function (e) {
+        if (e.target === pwaModal) closePwaModal();
+      });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') closePwaModal();
+      });
+    }
+  })();
+</script>

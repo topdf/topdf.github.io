@@ -1,0 +1,50 @@
+---
+import { getDictionary, getLanguageMeta, type LangCode } from '@/i18n/config';
+
+interface Props {
+  lang: LangCode;
+}
+
+const { lang } = Astro.props;
+const dict = getDictionary(lang);
+const langMeta = getLanguageMeta(lang);
+---
+
+<nav aria-label="Breadcrumb" class="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 pt-4 pb-1">
+  <ol class="flex flex-wrap items-center gap-1.5 text-xs sm:text-sm font-medium text-espresso/75 dark:text-linen/75">
+    <li class="inline-flex items-center">
+      <a
+        href="/"
+        class="inline-flex items-center gap-1 rounded-md px-1.5 py-0.5 hover:text-coral dark:hover:text-coral transition-colors"
+      >
+        <svg
+          class="h-3.5 w-3.5 shrink-0 text-slate dark:text-slate-light"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+          <polyline points="9 22 9 12 15 12 15 22"></polyline>
+        </svg>
+        <span>{dict.breadcrumbs.home}</span>
+      </a>
+    </li>
+    <li aria-hidden="true" class="text-espresso/40 dark:text-linen/40 select-none">
+      /
+    </li>
+    <li class="inline-flex items-center">
+      <a
+        href={langMeta.path}
+        aria-current="page"
+        class="rounded-md px-1.5 py-0.5 font-semibold text-espresso dark:text-linen"
+      >
+        {dict.breadcrumbs.current}
+      </a>
+    </li>
+  </ol>
+</nav>
